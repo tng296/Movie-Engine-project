@@ -53,3 +53,8 @@ function rightScroll()
 
     displayThumbnails();
 }
+
+window.onload = function ()
+{
+    dynamicScroll();
+}
