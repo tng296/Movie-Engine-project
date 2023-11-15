@@ -12,3 +12,23 @@
 .active, .tablinks:hover {
     
 }
+
+
+.social_icon ul {
+    list-style: none;
+    padding: 0;
+    display: flex; /* Display the list items in a row */
+    gap: 10px; /* Set the fixed space (10px) between photos */
+}
+  
+.social_icon li {
+    flex: 1; /* Distribute available space equally among list items */
+    max-width: 200px; /* Set a maximum width for the images */
+    }
+  
+.social_icon img {
+    width: 100%; /* Make all images take up 100% of their container's width */
+    height: 200px; /* Maintain the aspect ratio of the images */
+    display: block; /* Remove any default inline spacing around the images */
+}
+   
