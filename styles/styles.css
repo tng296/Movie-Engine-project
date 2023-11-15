@@ -1,0 +1,14 @@
+/* Style the tab content */
+.tabcontent {
+    display: none; 
+}
+
+/* Style the buttons that are used to open the tab content */
+.tablinks {
+   
+}
+
+/* Style the active class, and buttons on mouse-over */
+.active, .tablinks:hover {
+    
+}
