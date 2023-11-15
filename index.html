@@ -1,55 +1,354 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IM!DB</title>
-    <link rel="stylesheet" type="text/css" href="styles/styles.css">
-</head>
-<body>
-    <div class="tab">
-        <button class="tablinks defaultOpen" onclick="openTab(event, 'Home')">Home</button>
-        <button class="tablinks" onclick="openTab(event, 'Search')">Search</button>
-        <button class="tablinks" onclick="openTab(event, 'Contact')">Contact Us</button>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <style>
+      body.dark-mode {
+        background-color: rgba(0, 0, 0, 0.808);
+        color: #fff;
+      }
+
+      .dynamicscrolling {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        margin-bottom: 20px; /* Added margin to separate from the MoviesToWatch section */
+      }
+
+      .dynamicscrolling img {
+        margin-right: 70px;
+      }
+
+      .leftscrollbuttonstyle {
+        position: absolute;
+        top: 100px;
+        left: 280px;
+        z-index: 1;
+        cursor: pointer;
+      }
+
+      .rightscrollbuttonstyle {
+        position: absolute;
+        top: 100px;
+        right: 350px;
+        z-index: 1;
+        cursor: pointer;
+      }
+
+      /* Additional styles for the MoviesToWatch section */
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f2f2f2;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        height: 100vh;
+      }
+
+      #MoviesToWatch-container {
+        text-align: center;
+        margin-top: 20px; /* Added margin to separate from the dynamic scrolling section */
+      }
+
+      #search-form {
+        max-width: 600px;
+        margin: 0 auto;
+      }
+
+      #search-input {
+        width: 80%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        outline: none;
+        font-size: 16px;
+      }
+
+      #search-btn {
+        background-color: #4285f4;
+        color: #fff;
+        border: none;
+        padding: 10px 15px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+      }
+    </style>
+  </head>
+
+  <body class="dark-mode">
+    <div class="dynamicscrolling" id="thumbnails-container"></div>
+    <div class="leftscrollbuttonstyle">
+      <img
+        src="leftscrollbutton.png"
+        width="60"
+        height="60"
+        onclick="leftScroll()"
+      />
+    </div>
+    <div class="rightscrollbuttonstyle">
+      <img
+        src="rightscrollbutton.png"
+        width="60"
+        height="60"
+        onclick="rightScroll()"
+      />
     </div>
 
-    <div id="Home" class="tabcontent">
-        <h3>Home</h3>
-        <p>Home.</p>
+    <!-- Start dynamic scrolling when the page loads -->
+    <script>
+      let intervalId;
+      let thumbnails = [
+        "movie1.jpg",
+        "movie2.jpg",
+        "movie3.jpg",
+        "movie4.jpg",
+        "movie5.jpg",
+      ];
+      let thumbnailQueue = [
+        "movie6.jpg",
+        "movie7.jpg",
+        "movie8.jpg",
+        "movie9.jpg",
+        "movie10.jpg",
+      ];
+      let firstTB = thumbnails[0];
+      let lastTB = thumbnails[thumbnails.length - 1];
+
+      function dynamicScroll() {
+        displayThumbnails();
+        // Start dynamic scrolling
+        intervalId = setInterval(() => {
+          thumbnailQueue.push(firstTB);
+          thumbnails.shift();
+          thumbnails.push(thumbnailQueue[0]);
+          thumbnailQueue.shift();
+          firstTB = thumbnails[0];
+          lastTB = thumbnails[thumbnails.length - 1];
+
+          displayThumbnails();
+        }, 3000); // Adjust the interval as needed
+      }
+
+      function displayThumbnails() {
+        let thumbnailsContainer = document.getElementById(
+          "thumbnails-container"
+        );
+        thumbnailsContainer.innerHTML = thumbnails
+          .map((thumbnail) => `<img src="${thumbnail}" />`)
+          .join("");
+      }
+
+      function leftScroll() {
+        clearInterval(intervalId);
+
+        thumbnailQueue.push(thumbnails.shift());
+        thumbnails.push(thumbnailQueue.shift());
+
+        displayThumbnails();
+      }
+
+      function rightScroll() {
+        clearInterval(intervalId);
+
+        thumbnailQueue.unshift(thumbnails.pop());
+        thumbnails.unshift(thumbnailQueue.pop());
+
+        displayThumbnails();
+      }
+    </script>
+
+    <div id="MoviesToWatch-container">
+      <h2>MoviesToWatch</h2>
+
+      <form id="search-form" action="search-results.html" method="GET">
+        <!-- Replace "search-results.html" with the actual URL for your movie search functionality -->
+        <input
+          type="text"
+          id="search-input"
+          name="q"
+          aria-label="Search"
+          autofocus
+        />
+        <button type="submit" id="search-btn">Search</button>
+      </form>
+
+      <!-- Additional content for your movie website goes here -->
     </div>
 
-    <div id="Search" class="tabcontent">
-        <h3>Search</h3>
-        <p>Search here.</p>
-    </div>
 
-    <div id="Contact" class="tabcontent">
-          <div class="social_icon">
+    <style>
+        .social_icon {
+          display: flex;
+          justify-content: center; /* Center the images horizontally */
+          align-items: center;
+        }
+    
+        .social_icon ul {
+          list-style: none;
+          padding: 0;
+          display: flex;
+        }
+    
+        .social_icon li {
+          margin: 0 10px; /* Adjust the margin between images */
+        }
+    
+        .social_icon a img {
+          max-width: 100%; /* Ensure images do not exceed their original size */
+          height: auto; /* Maintain aspect ratio */
+        }
+      </style>
+    </head>
+    <body>
+      <div class="social_icon">
+        <ul>
+          <li><a href="#"><img src="movie1.jpg" alt="Movie 1" /></a></li>
+          <li><a href="#"><img src="movie2.jpg" alt="Movie 2" /></a></li>
+          <li><a href="#"><img src="movie3.jpg" alt="Movie 3" /></a></li>
+          <li><a href="#"><img src="movie4.jpg" alt="Movie 4" /></a></li>
+          <li><a href="#"><img src="movie5.jpg" alt="Movie 5" /></a></li>
+          <li><a href="#"><img src="movie6.jpg" alt="Movie 6" /></a></li>
+        </ul>
+      </div>
+      
+      <div class="social_icon">
+        <ul>
+          <li><a href="#"><img src="movie6.jpg" alt="Movie 6" /></a></li>
+          <li><a href="#"><img src="movie7.jpg" alt="Movie 7" /></a></li>
+          <li><a href="#"><img src="movie8.jpg" alt="Movie 8" /></a></li>
+          <li><a href="#"><img src="movie9.jpg" alt="Movie 9" /></a></li>
+          <li><a href="#"><img src="movie10.jpg" alt="Movie 10" /></a></li>
+          <li><a href="#"><img src="movie1.jpg" alt="Movie 1" /></a></li>
+        </ul>
+      </div>
+
+      <div class="social_icon">
+        <ul>
+          <li><a href="#"><img src="img-8.png" alt="Movie 1" /></a></li>
+          <li><a href="#"><img src="img-9.png" alt="Movie 2" /></a></li>
+          <li><a href="#"><img src="img-3.png" alt="Movie 3" /></a></li>
+          <li><a href="#"><img src="img-4.png" alt="Movie 4" /></a></li>
+          <li><a href="#"><img src="img-15.png" alt="Movie 5" /></a></li>
+          <li><a href="#"><img src="img-13.png" alt="Movie 6" /></a></li>
+        </ul>
+      </div>
+    </body>
+
+    <style>
+        .footer_section {
+          background-color: #333;
+          color: #fff;
+          padding: 20px 0;
+        }
+    
+        .container {
+          display: flex;
+          justify-content: center; /* Center the content horizontally */
+          align-items: center;
+          flex-direction: column; /* Stack the elements vertically */
+          height: 15px; /* Ensure full viewport height */
+        }
+    
+        .footer_menu ul {
+          list-style: none;
+          padding: 0;
+          display: flex;
+        }
+    
+        .footer_menu li {
+          margin: 0 15px;
+        }
+    
+        .footer_menu a {
+          text-decoration: none;
+          color: #fff;
+          font-weight: bold;
+        }
+    
+        .footer_menu a:hover {
+          text-decoration: underline;
+        }
+    
+        .footer_info {
+          text-align: center; /* Center the text horizontally */
+          margin-top: 20px; /* Add margin for separation */
+        }
+    
+        .footer_info p {
+          margin: 0;
+          font-size: 14px;
+        }
+      </style>
+    
+    <body>
+      <div class="footer_section layout_padding">
+        <div class="container">
+          <div class="footer_menu">
             <ul>
-              <li>
-                <a href="#"><img src="images/Luis.png" /></a>
-                <p>Luis</p>
-              </li>
-              <li>
-                <a href="#"><img src="images/Cheng.png" /></a>
-                <p>Cheng</p>
-              </li>
-              <li>
-                <a href="src/Li.html"><img src="images/Li0.png" /></a>
-                <p>Li</p>
-              </li>
-              <li>
-                <a href="#"><img src="images/Mark.png" /></a>
-                <p>Mark</p>
-              </li>
-              <li>
-                <a href="#"><img src="images/Tung.png" /></a>
-                <p>Tung</p>
-              </li>
+              <li><a href="index.html">Luis</a></li>
+              <li><a href="movies.html">Cheng</a></li>
+              <li><a href="Li.html">Li</a></li>
+              <li><a href="celebs.html">Mark</a></li>
+              <li><a href="#">Tung</a></li>
             </ul>
           </div>
+    
+          
+        </div>
+      </div>
+    </body>
+    
+    
+        <style>
+          .social_icon ul {
+            list-style: none;
+            padding: 0;
+            display: flex; /* Display the list items in a row */
+            gap: 10px; /* Set the fixed space (10px) between photos */
+          }
+
+          .social_icon li {
+            flex: 1; /* Distribute available space equally among list items */
+          }
+
+          .social_icon img {
+            width: 100%; /* Make all images take up 100% of their container's width */
+            height: 200px; /* Maintain the aspect ratio of the images */
+            display: block; /* Remove any default inline spacing around the images */
+          }
+        </style>
+        <div class="social_icon">
+          <ul>
+            <li>
+              <a href="#"><img src="Luis.png" /></a>
+            </li>
+            <li>
+              <a href="#"><img src="Cheng.png" /></a>
+            </li>
+            <li>
+              <a href="Li.html"><img src="Li0.png" /></a>
+            </li>
+            <li>
+              <a href="#"><img src="Mark.png" /></a>
+            </li>
+            <li>
+              <a href="#"><img src="Tung.png" /></a>
+            </li>
+          </ul>
+        </div>
+      </div>
     </div>
 
-    <script src="scripts/index.js"></script>
-</body>
+    <!-- Connect the two sections -->
+    <script>
+      dynamicScroll();
+    </script>
+  </body>
+
+  
 </html>
