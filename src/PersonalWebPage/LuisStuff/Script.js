@@ -1909,19 +1909,19 @@ var ChangeBackground = function()
 		BGColorValue0 = $("Background Color 0").value;
 		if ($("Image Selection").value == 0)
 		{
-			document.body.style.backgroundImage = 'url("Comanchitas.gif")';
+			document.body.style.backgroundImage = 'url("LuisStuff/Comanchitas.gif")';
 		}
 		else if ($("Image Selection").value == 1)
 		{
-			document.body.style.backgroundImage = 'url("Espurr.gif")';
+			document.body.style.backgroundImage = 'url("LuisStuff/Espurr.gif")';
 		}
 		else if ($("Image Selection").value == 2)
 		{
-			document.body.style.backgroundImage = 'url("Skitty.gif")';
+			document.body.style.backgroundImage = 'url("LuisStuff/Skitty.gif")';
 		}
 		else if ($("Image Selection").value == 3)
 		{
-			document.body.style.backgroundImage = 'url("Annabella.gif")';
+			document.body.style.backgroundImage = 'url("LuisStuff/Annabella.gif")';
 		}
 	}
 	LanguageChannel = $("Language List").value;
