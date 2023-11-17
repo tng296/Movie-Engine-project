@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+
+
+<html>
+<style>
+   body {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin: 0;
+   }
+
+   p {
+      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+      font-size: 11;
+      font-style: normal;
+   }
+
+   /* Dark Mode Styles */
+   body.dark-mode {
+      background-color: rgba(0, 0, 0, 0.808);
+      color: #fff;
+   }
+
+   /* Light Mode Styles */
+   body.light-mode {
+      background-color: #fff;
+      color: #333;
+   }
+
+
+   .theme-change-button {
+      position: fixed;
+      top: 25px;
+      right: 25px;
+      z-index: 1000;
+      /* Ensure it appears above other elements */
+      border: none;
+      padding: 10px;
+      cursor: pointer;
+   }
+
+   .left-side {
+      flex: 1;
+      /* Take up 50% of the container width */
+   }
+
+
+   .spacebetween {
+      display: flex;
+      justify-content: space-between;
+   }
+
+   .container {
+      border-left: 2px solid #000;
+      /* Border on the left side */
+      border-right: 2px solid #000;
+      /* Border on the right side */
+      min-height: 100vh;
+      padding: 20px;
+      max-width: 800px;
+      text-align: center;
+      margin: 0 auto;
+   }
+</style>
+
+<head>
+   <meta charset="utf-8">
+   <title>Sam's intro</title>
+   <script>
+      function toggleTheme() {
+         const body = document.body;
+         const themeToggle = document.getElementById('theme-toggle');
+
+         if (body.classList.contains('dark-mode')) {
+            body.classList.remove('dark-mode');
+            body.classList.add('light-mode');
+            themeToggle.src = 'https://cdn-icons-png.flaticon.com/512/6714/6714978.png';
+            themeToggle.alt = 'Light Mode';
+         } else {
+            body.classList.remove('light-mode');
+            body.classList.add('dark-mode');
+            themeToggle.src = '5983441.png';
+            themeToggle.alt = 'Dark Mode';
+         }
+      }
+
+   </script>
+</head>
+
+<body class="dark-mode">
+   <ul class="theme-change-button">
+      <img id="theme-toggle" src="5983441.png" width="60" height="60" alt="Clickable Image" onclick="toggleTheme()">
+   </ul>
+   <div class="container">
+      <h1>Introduction</h1>
+
+      <p>My name is Cheng Sam Cheang. I am a self-motivated computer science undergraduate with experience
+         coding
+         in data structures and algorithms. I am currently studying at the University of Houston-Downtown and will be
+         graduating in may 2024. I have confidence in C++ programming language, including problem solving Data
+         Structures and Algorithms. I have taken relevant coursework in Software Engineering, Operating System,
+         Database
+         System and Data Structures and Algorithms. I have worked as a busser at Haidilao Hotpot in Katy, since May
+         2022. In my free time, I enjoy the process of solving problem and the feeling of accomplishment.</strong>
+      </p>
+
+
+      <img src="https://lordicon.com/icons/wired/gradient/1324-c-code-language.svg" width="70" height="70">
+      <img src="https://www.tutorialsteacher.com/Content/images/home/sql.png" width="60" height="60">
+      <img src="https://raw.githubusercontent.com/LeetCode-OpenSource/vscode-leetcode/master/resources/LeetCode.png"
+         width="60" height="60">
+      <p><strong>Here is my leetcode profile, contains information of skills I have and currently working
+            on.</strong>
+      </p>
+      <p><a href="https://leetcode.com/sam18328578207/">Leetcode</a></p>
+      <p><strong>Most useful leetcode guide that I found.</strong></p>
+      <p><a href="https://github.com/youngyangyang04/leetcode-master/tree/master">leetcode guide resources</a></p>
+      <div class="spacebetween">
+         <div class="left-side">
+            <table border="1">
+               <caption><strong>Leetcode Progress (category may overlap, total is the total # problem
+                     completed)</strong>
+               </caption>
+
+               <thead>
+                  <tr>
+                     <th>Problem Category</th>
+                     <th># problem completed</th>
+                  </tr>
+               </thead>
+
+               <tfoot>
+                  <tr>
+                     <th>Total</th>
+                     <th>135</th>
+                  </tr>
+               </tfoot>
+               <tbody>
+                  <tr>
+                     <td>Dynamic Programming</td>
+                     <td>32</td>
+                  </tr>
+                  <tr>
+                     <td>Backtracking</td>
+                     <td>17</td>
+                  </tr>
+                  <tr>
+                     <td>Greedy</td>
+                     <td>15</td>
+                  </tr>
+                  <tr>
+                     <td>Uninform search</td>
+                     <td>50</td>
+                  </tr>
+                  <tr>
+                     <td>Other</td>
+                     <td>70</td>
+                  </tr>
+               </tbody>
+
+            </table>
+         </div>
+         <list><strong>ToDo List before graduating</strong>
+            <ol>
+               <li>Internship</li>
+               <li>Personal projects</li>
+               <li>Coding practices</li>
+               <li>Leetcode</li>
+               <li>HackerRank</li>
+            </ol>
+         </list>
+      </div>
+   </div>
+</body>
+
+</html>
