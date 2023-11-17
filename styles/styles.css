@@ -4,18 +4,18 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    background-color:bisque;
+    background-color:#525266;
     width: 80%;
     height: 75%;
     padding: 6px 12px;
-    border-radius: 0 0 10px 10px;
+    border-radius: 10px;
 }
 
 /* Style the buttons that are used to open the tab content */
 .tablinks {
    /*  darker grey   */
-    background-color: #888;
-    color: black;
+    background-color: #423f3b;
+    color: whitesmoke;
     padding: 22px 10px;
     font-size: 17px;
     width: 50%;
@@ -24,13 +24,13 @@
     justify-content: center;
     align-items: center;
     border-radius: 10px 10px 0 0;
-    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+    box-shadow: 0 10px 10px 0 rgba(0.2, 0.2, 0, 0.2);
     transition: 0.3s;
 }
 
 /* Style the active class, and buttons on mouse-over */
 .active{
-    background-color: bisque;
+    background-color: #525266;
     box-shadow: none;
     border: none;
 }
@@ -59,8 +59,8 @@ body {
 }
 
 body.dark-mode {
-    background-color: rgba(0, 0, 0, 0.808);
-    color: black;
+    background-color: tomato;
+    color: whitesmoke;
 }
 
 .dynamicscrolling {
@@ -121,10 +121,17 @@ form button {
 }
 
 .footer_section {
-    background-color: #333;
+    background-color: #525266;
     color: #fff;
     padding: 20px 0;
     flex-shrink: 0;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width:80%;
+    border-radius: 10px;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
 }
 
 .container {
@@ -197,6 +204,7 @@ form button {
 
 #header {
     text-align: center;
+    width:80%;
 }
 
 #logo {
@@ -205,6 +213,11 @@ form button {
     display: flex;
     align-items: center;
     /* Center logo and text horizontally */
+    background-color: #525266;
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    
 }
 
 #logo img {
