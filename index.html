@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IM!DB</title>
+  <link rel="stylesheet" type="text/css" href="styles/styles.css">
+</head>
+
+<body class="dark-mode">
+  <div id="header">
+    <div id="logo">
+      <!-- Logo image -->
+      <img src="images/assets/movie-engine-logo.jpg" alt="Movie Engine Logo">
+      <!-- Movie Engine text -->
+      <h1>Movie Engine</h1>
+    </div>
+  </div>
+
+
+  <div class="tab">
+    <button class="tablinks defaultOpen active" onclick="openTab(event, 'Home')">Home</button>
+    <button class="tablinks" onclick="openTab(event, 'Browse')">Browse</button>
+  </div>
+
+  <div id="Home" class="tabcontent">
+    <p> Let's think of some content to put here.</p>
+    <h1>Ideas include:</h1>
+    <ul>
+      <li>announcements of movie releases</li>
+      <li>announcements of new features</li>
+      <li>top picks</li>
+    </ul>
+  </div>
+
+  <div id="Browse" class="tabcontent">
+    <div id="search-form">
+      <form>
+        <input type="text" placeholder="search movie">
+        <button type="submit">Search</button>
+      </form>
+    </div>
+
+    <!-- Dynamic scrolling section for movie thumbnails -->
+    <div class="dynamicscrolling" id="thumbnails-container"></div>
+
+    <!-- Left and right scroll buttons -->
+    <div class="leftscrollbuttonstyle">
+      <img src="images/assets/leftscrollbutton.png" width="60" height="60" onclick="leftScroll()" />
+    </div>
+    <div class="rightscrollbuttonstyle">
+      <img src="images/assets/rightscrollbutton.png" width="60" height="60" onclick="rightScroll()" />
+    </div>
+  </div>
+
+  <footer class="footer_section">
+    <div class="social_icon">
+      <ul>
+        <li>
+          <a href="src/PersonalWebPage/Luis.html"><img src="images/Luis.png" /></a>
+          <p>Luis</p>
+        </li>
+        <li>
+          <a href="src/sam.html"><img src="images/Cheng.png" /></a>
+          <p>Sam</p>
+        </li>
+        <li>
+          <a href="src/Li.html"><img src="images/Li0.png" /></a>
+          <p>Li</p>
+        </li>
+        <li>
+          <a href="#"><img src="images/Mark.png" /></a>
+          <p>Mark</p>
+        </li>
+        <li>
+          <a href="#"><img src="images/Tung.png" /></a>
+          <p>Tung</p>
+        </li>
+      </ul>
+    </div>
+  </footer>
+  <script src="scripts/index.js">
+  </script>
+</body>
+
+</html>
