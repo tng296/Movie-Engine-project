@@ -59,7 +59,7 @@ body {
 }
 
 body.dark-mode {
-    background-color: tomato;
+    background-color: #000080;
     color: whitesmoke;
 }
 
@@ -232,7 +232,7 @@ form button {
     font-family: recursive, 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     font-size: 60px;
     margin: 0;
-    color: tomato;
+    color: #8080ff;
     /* Adjust the font color */
 }
    
