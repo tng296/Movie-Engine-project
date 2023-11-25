@@ -1,10 +1,18 @@
+/* custom font for logo */
+@font-face {
+    font-family: 'BubblegumSans';
+    src: url('BubblegumSans-Regular.ttf') format('truetype');
+    /* Add other font formats if necessary */
+}
+
+
 /* Style the tab content */
 .tabcontent {
-    display: none; 
+    display: none;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    background-color:#525266;
+    background-color: #525266;
     width: 80%;
     height: 75%;
     padding: 6px 12px;
@@ -13,7 +21,7 @@
 
 /* Style the buttons that are used to open the tab content */
 .tablinks {
-   /*  darker grey   */
+    /*  darker grey   */
     background-color: #423f3b;
     color: whitesmoke;
     padding: 22px 10px;
@@ -29,7 +37,7 @@
 }
 
 /* Style the active class, and buttons on mouse-over */
-.active{
+.active {
     background-color: #525266;
     box-shadow: none;
     border: none;
@@ -39,8 +47,8 @@
     background-color: #999;
 }
 
-.tab{
-    
+.tab {
+
     width: 80%;
     display: flex;
     justify-content: left;
@@ -48,7 +56,7 @@
 
 body {
     font-family: Arial, sans-serif;
-    background-color: #f2f2f2;
+    background-color: #1c1c1c;
     margin: 0;
     display: flex;
     flex-direction: column;
@@ -59,8 +67,8 @@ body {
 }
 
 body.dark-mode {
-    background-color: #000080;
-    color: whitesmoke;
+    background-color: #1c1c1c;
+    color: rgba(245, 245, 245, 0.861);
 }
 
 .dynamicscrolling {
@@ -70,8 +78,26 @@ body.dark-mode {
     margin-top: 20px;
 }
 
-.dynamicscrolling img {
+.dynamicscrolling .thumbnail-item {
+    position: relative;
+    display: inline-block;
     margin-right: 70px;
+}
+
+.dynamicscrolling .thumbnail-item img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.dynamicscrolling .thumbnail-item h5.thumbnail.title {
+
+    margin: 0;
+    padding-top: 20px;
+    width: 100%;
+    padding-bottom: 17px;
+    background-color: #1c1c1c;
+    color: white;
 }
 
 .leftscrollbuttonstyle,
@@ -127,7 +153,7 @@ form button {
     flex-shrink: 0;
     margin-top: 10px;
     margin-bottom: 10px;
-    width:80%;
+    width: 80%;
     border-radius: 10px;
     padding: 10px;
     display: flex;
@@ -204,20 +230,20 @@ form button {
 
 #header {
     text-align: center;
-    width:80%;
+    width: 80%;
 }
 
 #logo {
+
     margin-top: 20px;
     /* Adjust as needed */
     display: flex;
     align-items: center;
     /* Center logo and text horizontally */
-    background-color: #525266;
     padding: 15px;
     border-radius: 10px;
     margin-bottom: 10px;
-    
+
 }
 
 #logo img {
@@ -229,10 +255,10 @@ form button {
 }
 
 #logo h1 {
-    font-family: recursive, 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    font-size: 60px;
+    font-family: 'BubblegumSans';
+    font-size: 80px;
+    letter-spacing: 6px;
     margin: 0;
     color: #8080ff;
     /* Adjust the font color */
 }
-   
