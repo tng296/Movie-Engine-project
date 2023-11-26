@@ -24,21 +24,6 @@
         <button class="tablinks" onclick="openTab(event, 'Browse')">Browse</button>
     </div>
     <div id="Home" class="tabcontent">
-        <p> Let's think of some content to put here.</p>
-        <h1>Ideas include:</h1>
-        <ul>
-            <li>announcements of movie releases</li>
-            <li>announcements of new features</li>
-            <li>top picks</li>
-        </ul>
-    </div>
-    <div id="Browse" class="tabcontent">
-        <div id="search-form">
-            <form>
-                <input type="text" placeholder="search movie">
-                <button type="submit">Search</button>
-            </form>
-        </div>
         <!-- Dynamic scrolling section for movie thumbnails -->
         <div class="dynamicscrolling" id="thumbnails-container"></div>
         <!-- Left and right scroll buttons -->
@@ -48,6 +33,15 @@
         <div class="rightscrollbuttonstyle">
             <img src="images/assets/rightscrollbutton.png" width="60" height="60" onclick="rightScroll()" />
         </div>
+    </div>
+    <div id="Browse" class="tabcontent">
+        <div id="search-form">
+            <form id="search-box">
+                <input type="text" class="form-control" id="movie" placeholder="search movie">
+                <button type="submit">Search</button>
+            </form>
+        </div>
+        <div id="result" class="movie-detail"></div>
     </div>
     <footer class="footer_section">
         <div class="social_icon">
@@ -69,7 +63,7 @@
                     <p>Mark</p>
                 </li>
                 <li>
-                    <a href="#"><img src="images/Tung.png" /></a>
+                    <a href="src/Tung.html"><img src="images/Tung.png" /></a>
                     <p>Tung</p>
                 </li>
             </ul>

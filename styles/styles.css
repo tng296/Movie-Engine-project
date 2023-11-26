@@ -262,3 +262,23 @@ form button {
     color: #8080ff;
     /* Adjust the font color */
 }
+
+.movie-details {
+    margin-right: 15px;
+    /* Adjust the margin as needed */
+    font-family: 'Montserrat', sans-serif;
+    /* Use the Montserrat font */
+}
+
+.img-thumbnail {
+    float: left;
+    width: 200px;
+    height: 100%;
+    /* To maintain the aspect ratio of the image */
+    margin-right: 20px;
+    /* Adjust the margin as needed */
+}
+
+.details {
+    font-family: 'Montserrat', sans-serif;
+}

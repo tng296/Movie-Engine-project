@@ -99,4 +99,45 @@ window.onload = function () {
     document.getElementById("Home").style.display = "flex";
     document.getElementById("defaultOpen").className += " active";
 };
+document.addEventListener('DOMContentLoaded', () => {
+    const apiKey = "6c214e6d";
+    const searchBox = document.getElementById('search-box');
+    const resultContainer = document.getElementById('result');
 
+    searchBox.addEventListener('submit', async (event) => {
+        event.preventDefault();
+
+        const movieInput = document.getElementById('movie');
+        const movie = movieInput.value;
+
+        const url = `https://www.omdbapi.com/?apikey=${apiKey}&t=${movie}`;
+
+        try {
+            const response = await fetch(url);
+
+            if (!response.ok) {
+                throw new Error(`HTTP error! Status: ${response.status}`);
+            }
+
+            const data = await response.json();
+            console.log(data);
+
+            const resultHTML = `
+                <img class="img-thumbnail" src="${data.Poster}" alt="Movie Poster"/>
+                <div class="movie-detail">
+                    <h3>Movie Title: ${data.Title}</h3>
+                    <h3>Year: ${data.Year}</h3>
+                    <h3>Director: ${data.Director}</h3>
+                    <h3>Actors: ${data.Actors}</h3>
+                    <h3>Metascore: ${data.Metascore}</h3>
+                    <h3>IMDB: ${data.imdbRating}</h3>
+                    <h3>Plot: ${data.Plot}</h3>
+                </div>
+            `;
+
+            resultContainer.innerHTML = resultHTML;
+        } catch (error) {
+            console.error('Error fetching data:', error);
+        }
+    });
+});
