@@ -99,6 +99,7 @@ window.onload = function () {
     document.getElementById("Home").style.display = "flex";
     document.getElementById("defaultOpen").className += " active";
 };
+//adding movie api
 document.addEventListener('DOMContentLoaded', () => {
     const apiKey = "6c214e6d";
     const searchBox = document.getElementById('search-box');
