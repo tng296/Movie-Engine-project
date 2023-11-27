@@ -17,24 +17,20 @@ let thumbnailQueue = [
 let firstTB = thumbnails[0];
 let lastTB = thumbnails[thumbnails.length - 1];
 
-function openTab(evt, tabName)
-{
+function openTab(evt, tabName) {
     var i, tabcontent, tablinks;
     tabcontent = document.getElementsByClassName("tabcontent");
-    for (i = 0; i < tabcontent.length; i++)
-    {
+    for (i = 0; i < tabcontent.length; i++) {
         tabcontent[i].style.display = "none";
     }
     tablinks = document.getElementsByClassName("tablinks");
-    for (i = 0; i < tablinks.length; i++)
-    {
+    for (i = 0; i < tablinks.length; i++) {
         tablinks[i].className = tablinks[i].className.replace(" active", "");
     }
     document.getElementById(tabName).style.display = "flex";
     evt.currentTarget.className += " active";
 
-    if (tabName === 'Browse')
-    {
+    if (tabName === 'Browse') {
         //run this function for automatic scroll from right to left, no need to click
         dynamicScroll();
         // Simulate a click on the scroll buttons, we do this because the images are not loaded yet
@@ -43,32 +39,25 @@ function openTab(evt, tabName)
     }
 }
 
-function dynamicScroll()
-{
+function dynamicScroll() {
     displayThumbnails();
     intervalId = setInterval(() => {
-        // Move the first thumbnail to the end of the thumbnails array
-        thumbnails.push(thumbnails.shift());
-
-        // Update firstTB and lastTB
+        thumbnailQueue.push(firstTB);
+        thumbnails.shift();
+        thumbnails.push(thumbnailQueue[0]);
+        thumbnailQueue.shift();
         firstTB = thumbnails[0];
         lastTB = thumbnails[thumbnails.length - 1];
-
-        // Move the first thumbnail in the queue to the end of the queue
-        thumbnailQueue.push(thumbnailQueue.shift());
-
         displayThumbnails();
     }, 3000);
 }
 
-function getImageTitle(filePath)
-{
+function getImageTitle(filePath) {
     let filename = filePath.split('/').pop().split('.').slice(0, -1).join('.');
     return '    ' + filename;
 }
 
-function displayThumbnails()
-{
+function displayThumbnails() {
     let thumbnailsContainer = document.getElementById("thumbnails-container");
     thumbnailsContainer.innerHTML = thumbnails
         .map((thumbnail) => `
@@ -81,24 +70,21 @@ function displayThumbnails()
 }
 
 
-function leftScroll()
-{
+function leftScroll() {
     clearInterval(intervalId);
     thumbnailQueue.push(thumbnails.shift());
     thumbnails.push(thumbnailQueue.shift());
     displayThumbnails();
 }
 
-function rightScroll()
-{
+function rightScroll() {
     clearInterval(intervalId);
     thumbnailQueue.unshift(thumbnails.pop());
     thumbnails.unshift(thumbnailQueue.pop());
     displayThumbnails();
 }
 
-window.onload = function ()
-{
+window.onload = function () {
     document.getElementById("Home").style.display = "flex";
     document.getElementById("defaultOpen").className += " active";
 };
@@ -113,11 +99,9 @@ document.addEventListener('DOMContentLoaded', () => {
         const movieInput = document.getElementById('movie');
         const movie = movieInput.value;
         const url = `https://www.omdbapi.com/?apikey=${apiKey}&t=${movie}`;
-        try
-        {
+        try {
             const response = await fetch(url);
-            if (!response.ok)
-            {
+            if (!response.ok) {
                 throw new Error(`HTTP error! Status: ${response.status}`);
             }
             const data = await response.json();
@@ -136,8 +120,7 @@ document.addEventListener('DOMContentLoaded', () => {
             `;
             resultContainer.innerHTML = resultHTML;
         }
-        catch (error)
-        {
+        catch (error) {
             console.error('Error fetching data:', error);
         }
     });
