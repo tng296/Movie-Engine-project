@@ -50,15 +50,16 @@ function openTab(evt, tabName) {
 function dynamicScroll() {
     displayThumbnails();
     intervalId = setInterval(() => {
+        // Move the first thumbnail to the end of the thumbnails array
+        thumbnails.push(thumbnails.shift());
 
-        thumbnailQueue.push(firstTB);
-        thumbnails.shift();
-        thumbnailContent.shift();
-        thumbnails.push(thumbnailQueue[0]);
-        thumbnailContent.push(thumbnailmap[thumbnailQueue[0]]);
-        thumbnailQueue.shift();
+        // Update firstTB and lastTB
         firstTB = thumbnails[0];
         lastTB = thumbnails[thumbnails.length - 1];
+
+        // Move the first thumbnail in the queue to the end of the queue
+        thumbnailQueue.push(thumbnailQueue.shift());
+
         displayThumbnails();
     }, 3000);
 }
@@ -142,3 +143,5 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 });
+
+dynamicScroll();
