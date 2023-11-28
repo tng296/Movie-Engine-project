@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Mark Ulicnik</title>
+    <link rel="stylesheet" href="../styles/mark-styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Ubuntu+Mono&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"/>
+    
+  </head>
+  <body>
+    <div class="container-fluid">
+      <h1 class="quote" id="name-title"></h1>
+      <div class="row">
+        <div class="col-xs-6"><img src="../images/mark-headshot.JPG" alt="Programming Image" width="500" height="350"></div>
+        <div class="col-xs-6"><h2 class="quote"><em>
+          “Whatever you think, be sure it is what you think; whatever you want, be sure that is what you want; whatever you feel, be sure that is what you feel.”
+          ― T.S. Eliot </em></h2></div>
+      </div>
+      
+      <p> My GitHub: <a href="https://github.com/markeuli">markeuli</a></p>
+      <h2> Introduction</h2>
+      <p>Enthusiastic software engineering student with a unique appreciation for thorough documentation and useful software. Most comfortable in fast-paced, heavy-learning environments with new and engaging technologies and design specifications. Loves reading tech blogs and classic novels, cycling, and the outdoors. Prefers the active approach to life and engineering. </p>
+      <p>One of my strengths as a software engineer is my expertise in feature definition, design, and documentation. I have a passion for researching and recording documentation of features and technologies involved in my projects. This makes me a powerful team member, because my teams are all inherently equipped with the necessary information to carry out work on the most complicated code bases. Furthermore, my negotiation and conflict management skills enable me to work effectively within a team and facilitate communication between team members with different levels of knowledge on specific subjects.</p>
+      <h2> Reading, Programming, and Lifestyle Blog under construction</h2>
+      <p>I am currently working on a blog to share my daily (or more often weekly) thoughts on the field of software, but also different novels I've read and things I've learned about healthy living. It has been a fun project so far as I have three different main themes. I'll be able to theme each section a little differently so the reader can select the part of my brain they are interested in learning about.</p>
+      <p>Feel free to contact me on my cell at (832)283-4119 or by email at markulicnik@gmail.com if you have questions about me or my work.</p>
+      <h2>My Values</h2>
+      <div class="row">
+        <div class="col-xs-4"><em>Mentorship:</em> I believe as a life-long learner, it is my duty to pass along what knowledge and wisdom to those below me. In the same vein, I must also seek out those more experienced than I in order to learn from those that have achieved my goals.</div>
+        <div class="col-xs-4"><em>Integrity:</em> As students and professionals, I believe it is important to take pride in your work. </div>
+        <div class="col-xs-4"><em>Hydration:</em> Pretty much speaks for itself, mind and body are a temple.</div>
+      </div>
+      <h3>If you wish to reach me, you can send me a message below:</h3>
+      <form>
+        <label for="name">Name: <input type="text" id="name" name="name"></label>
+        <label for="email">Email: <input type="email" id="email" name="email" required></label>
+        <label for="msg">Message: 
+          <textarea id="msg" name="msg" rows="3" cols="30" ></textarea>
+          <input type="submit" value="Submit" />
+      </form>
+    </div>
+  </body>
+  <script>
+      var i = 0;
+      var text = 'Mark Ulicnik'; 
+
+      function typingAnimation() {
+        if (i < text.length) {
+          document.getElementById("name-title").innerHTML += text.charAt(i);
+          i++;
+          setTimeout(typeWriter, 50);
+        }
+      }
+      
+
+
+  //setInterval(typingAnimation, 500);
+  setInterval(() => {typingAnimation(); i = 0; document.getElementById("name-title").innerHTML = "";}, 50);
+  //document.getElementById("name-title").innerHTML = "";
+  </script>
+</html>

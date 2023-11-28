@@ -1,0 +1,37 @@
+label[for="msg"]{
+    display: block;
+    margin-top: 10px;
+}
+
+body .container-fluid{
+    margin:0 auto;
+    background-color: #9bf0fd;
+}
+
+.ubuntu {
+    font-family: 'Ubuntu Mono', monospace;
+}
+
+.quote {
+    font-family: 'Playfair Display', serif;
+}
+
+img{
+    border-radius: 10px;
+}
+
+.row {
+    text-align: center;
+    padding-top: 20px;
+}
+
+h2 {
+    font-family: 'Playfair Display', serif;
+}
+
+#name-title {
+    min-height: 45px;
+}
+
+
+

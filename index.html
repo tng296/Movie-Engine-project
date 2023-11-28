@@ -23,15 +23,43 @@
         <button class="tablinks" onclick="openTab(event, 'Browse')">Browse</button>
     </div>
     <div id="Home" class="tabcontent">
-        <!-- Move Scrolling to home tab -->
+        
         <!-- Dynamic scrolling section for movie thumbnails -->
-        <div class="dynamicscrolling" id="thumbnails-container"></div>
+
+        <div class="panel"><div class="dynamicscrolling" id="thumbnails-container"></div></div>
         <!-- Left and right scroll buttons -->
         <div class="leftscrollbuttonstyle">
             <img src="images/assets/leftscrollbutton.png" width="60" height="60" onclick="leftScroll()" />
         </div>
         <div class="rightscrollbuttonstyle">
             <img src="images/assets/rightscrollbutton.png" width="60" height="60" onclick="rightScroll()" />
+        </div>
+        <div class="panel-container">
+            <div class="panel">
+                <h3>Movie Announcements</h3>
+                <ul>
+                    <li>Godzilla Minus One (2023)</li>
+                    <li>The Shift (2023)</li>
+                    <li>Silent Night (2023)</li>
+                    <li>Animal Crossing Christmas Festival (2023)</li>
+                </ul>
+            </div>
+            <div class="panel">
+                <h3>Trending <newline>News</newline></h3>
+                <ul>
+                    <li>'Avatar 3' Release Data Pushed Back Due to Production Delays. <a href="https://www.usmagazine.com/entertainment/pictures/avatar-3-everything-to-know-about-the-way-of-water-sequel/">Link</a></li>
+                    <li>Timothee Chalamet Looks Just Like Willy Wonka in Magenta Suit. <a href="https://www.usmagazine.com/stylish/pictures/timothee-chalamets-best-looks-during-wonka-press-tour/">Link</a></li>
+                    
+                </ul>
+            </div>
+            <div class="panel">
+                <h3>Popular Reviews</h3>
+                <ul>
+                    <li>
+                        See Rotten Tomatoes Reviews for <a href="https://www.rottentomatoes.com/m/godzilla_minus_one">Godzilla Minus One</a>
+                    </li>
+                </ul>
+            </div>
         </div>
     </div>
     <div id="Browse" class="tabcontent">
@@ -43,31 +71,6 @@
         </div>
         <div id="result" class="movie-detail"></div>
     </div>
-    <MAIN>
-        <DIV>
-            <TABLE>
-                <TR>
-                    <TH>
-                        <DIV ID = "ANNOUNCEMENT">
-                            <h2>MOVIE ANNOUNCEMENT</h2>
-                            <br>
-                            <br>
-                            COMING 2024
-                            <br>
-                            <br>
-                            <img src = "images/movie/Garfield.jpg">
-                            <img src = "images/movie/Apes.jpg">
-                        </DIV>
-                    </TH>
-                    <TH>
-                        <DIV ID = "POPULAR">
-                            POPULAR
-                        </DIV>
-                    </TH>
-                </TR>
-            </TABLE>
-        </DIV>
-    </MAIN>
     <footer class="footer_section">
         <div class="social_icon">
             <ul>
@@ -84,7 +87,7 @@
                     <p>Li</p>
                 </li>
                 <li>
-                    <a href="#"><img src="images/Mark.png" /></a>
+                    <a href="src/Mark.html"><img src="images/Mark.png" /></a>
                     <p>Mark</p>
                 </li>
                 <li>

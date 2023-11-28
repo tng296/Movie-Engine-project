@@ -11,7 +11,7 @@
 .tabcontent
 {
     display: none;
-    justify-content: center;
+    justify-content: top;
     align-items: center;
     flex-direction: column;
     background-color: #525266;
@@ -47,6 +47,18 @@
     border: none;
 }
 
+.panel ul li{
+    list-style: none;
+    padding: 10px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+a
+{
+    text-decoration: none;
+    color: turquoise;
+}
+
 .tablinks:hover
 {
     background-color: #999;
@@ -68,8 +80,29 @@ body
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 100vh;
+    height: 1000px;
     flex: 1 0 auto;
+}
+
+.panel-container{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start; 
+    justify-content: space-between; 
+    width: auto; 
+    height: auto; 
+}
+
+.panel{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: top;
+    height: 90%;
+    flex: 1;
+    border-radius: 10px;
+    background-color: #3b3b50;
+    margin: 10px;
 }
 
 body.dark-mode
@@ -82,21 +115,24 @@ body.dark-mode
 {
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-between;
     margin-top: 20px;
+    height: 250px;
+    box-sizing: border-box;
+    overflow: auto;
 }
 
 .dynamicscrolling .thumbnail-item
 {
     position: relative;
     display: inline-block;
-    margin-right: 70px;
+    margin-top: 15px;
 }
 
 .dynamicscrolling .thumbnail-item img
 {
     display: block;
-    width: 100%;
+    width: 80%;
     height: auto;
 }
 
@@ -104,9 +140,9 @@ body.dark-mode
 {
     margin: 0;
     padding-top: 20px;
-    width: 100%;
+    width: 80%;
     padding-bottom: 17px;
-    background-color: #1c1c1c;
+    padding-left: 10px;
     color: white;
 }
 
