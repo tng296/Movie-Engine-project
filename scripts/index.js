@@ -1,3 +1,4 @@
+//Scrolling thumnails components
 let intervalId;
 let thumbnails = [
     "images/movie/Batman.jpg",
@@ -17,6 +18,7 @@ let thumbnailQueue = [
 let firstTB = thumbnails[0];
 let lastTB = thumbnails[thumbnails.length - 1];
 
+//Home and Browse tab definitions
 function openTab(evt, tabName) {
     var i, tabcontent, tablinks;
     tabcontent = document.getElementsByClassName("tabcontent");
@@ -99,13 +101,17 @@ document.addEventListener('DOMContentLoaded', () => {
         const movieInput = document.getElementById('movie');
         const movie = movieInput.value;
         const url = `https://www.omdbapi.com/?apikey=${apiKey}&t=${movie}`;
+
+        //check connection between requester and API server
         try {
             const response = await fetch(url);
             if (!response.ok) {
                 throw new Error(`HTTP error! Status: ${response.status}`);
             }
+            //read data to json format
             const data = await response.json();
             console.log(data);
+            //print out data
             const resultHTML = `
                 <img class="img-thumbnail" src="${data.Poster}" alt="Movie Poster"/>
                 <div class="movie-detail">
@@ -120,6 +126,7 @@ document.addEventListener('DOMContentLoaded', () => {
             `;
             resultContainer.innerHTML = resultHTML;
         }
+        //if server is not connected, throw an error type
         catch (error) {
             console.error('Error fetching data:', error);
         }

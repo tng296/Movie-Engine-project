@@ -9,6 +9,8 @@
     </script>
 </head>
 
+<!-- header and logo -->
+
 <body class="dark-mode">
     <div id="header">
         <div id="logo">
@@ -22,11 +24,12 @@
         <button class="tablinks defaultOpen active" onclick="openTab(event, 'Home')">Home</button>
         <button class="tablinks" onclick="openTab(event, 'Browse')">Browse</button>
     </div>
+    <!-- scrolling section -->
     <div id="Home" class="tabcontent">
-        
         <!-- Dynamic scrolling section for movie thumbnails -->
-
-        <div class="panel"><div class="dynamicscrolling" id="thumbnails-container"></div></div>
+        <div class="panel">
+            <div class="dynamicscrolling" id="thumbnails-container"></div>
+        </div>
         <!-- Left and right scroll buttons -->
         <div class="leftscrollbuttonstyle">
             <img src="images/assets/leftscrollbutton.png" width="60" height="60" onclick="leftScroll()" />
@@ -34,6 +37,7 @@
         <div class="rightscrollbuttonstyle">
             <img src="images/assets/rightscrollbutton.png" width="60" height="60" onclick="rightScroll()" />
         </div>
+        <!-- General information -->
         <div class="panel-container">
             <div class="panel">
                 <h3>Movie Announcements</h3>
@@ -45,24 +49,32 @@
                 </ul>
             </div>
             <div class="panel">
-                <h3>Trending <newline>News</newline></h3>
+                <h3>Trending <newline>News</newline>
+                </h3>
                 <ul>
-                    <li>'Avatar 3' Release Data Pushed Back Due to Production Delays. <a href="https://www.usmagazine.com/entertainment/pictures/avatar-3-everything-to-know-about-the-way-of-water-sequel/">Link</a></li>
-                    <li>Timothee Chalamet Looks Just Like Willy Wonka in Magenta Suit. <a href="https://www.usmagazine.com/stylish/pictures/timothee-chalamets-best-looks-during-wonka-press-tour/">Link</a></li>
-                    
+                    <li>'Avatar 3' Release Data Pushed Back Due to Production Delays. <a
+                            href="https://www.usmagazine.com/entertainment/pictures/avatar-3-everything-to-know-about-the-way-of-water-sequel/">Link</a>
+                    </li>
+                    <li>Timothee Chalamet Looks Just Like Willy Wonka in Magenta Suit. <a
+                            href="https://www.usmagazine.com/stylish/pictures/timothee-chalamets-best-looks-during-wonka-press-tour/">Link</a>
+                    </li>
+
                 </ul>
             </div>
             <div class="panel">
                 <h3>Popular Reviews</h3>
                 <ul>
                     <li>
-                        See Rotten Tomatoes Reviews for <a href="https://www.rottentomatoes.com/m/godzilla_minus_one">Godzilla Minus One</a>
+                        See Rotten Tomatoes Reviews for <a
+                            href="https://www.rottentomatoes.com/m/godzilla_minus_one">Godzilla Minus One</a>
                     </li>
                 </ul>
             </div>
         </div>
     </div>
+    <!-- Browse Tab -->
     <div id="Browse" class="tabcontent">
+        <!-- search box -->
         <div id="search-form">
             <form id="search-box">
                 <input type="text" class="form-control" id="movie" placeholder="search movie">
@@ -71,8 +83,10 @@
         </div>
         <div id="result" class="movie-detail"></div>
     </div>
+    <!-- Footer Section -->
     <footer class="footer_section">
         <div class="social_icon">
+            <h2>About Us</h2>
             <ul>
                 <li>
                     <a href="src/PersonalWebPage/Luis.html"><img src="images/Luis.png" /></a>
@@ -98,8 +112,7 @@
         </div>
     </footer>
 </body>
-
-
+<!-- JS implementation -->
 <script src="scripts/index.js"></script>
 
 </html>

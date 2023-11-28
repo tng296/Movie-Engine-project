@@ -1,6 +1,5 @@
 /* custom font for logo */
-@font-face
-{
+@font-face {
     font-family: 'BubblegumSans';
     src: url('BubblegumSans-Regular.ttf') format('truetype');
     /* Add other font formats if necessary */
@@ -8,8 +7,7 @@
 
 
 /* Style the tab content */
-.tabcontent
-{
+.tabcontent {
     display: none;
     justify-content: top;
     align-items: center;
@@ -22,8 +20,7 @@
 }
 
 /* Style the buttons that are used to open the tab content */
-.tablinks
-{
+.tablinks {
     /*  darker grey   */
     background-color: #423f3b;
     color: whitesmoke;
@@ -40,27 +37,24 @@
 }
 
 /* Style the active class, and buttons on mouse-over */
-.active
-{
+.active {
     background-color: #525266;
     box-shadow: none;
     border: none;
 }
 
-.panel ul li{
+.panel ul li {
     list-style: none;
     padding: 10px;
     font-family: 'Montserrat', sans-serif;
 }
 
-a
-{
+a {
     text-decoration: none;
     color: turquoise;
 }
 
-.tablinks:hover
-{
+.tablinks:hover {
     background-color: #999;
 }
 
@@ -71,8 +65,7 @@ a
     justify-content: left;
 }
 
-body
-{
+body {
     font-family: Arial, sans-serif;
     background-color: #1c1c1c;
     margin: 0;
@@ -84,16 +77,16 @@ body
     flex: 1 0 auto;
 }
 
-.panel-container{
+.panel-container {
     display: flex;
     flex-direction: row;
-    align-items: flex-start; 
-    justify-content: space-between; 
-    width: auto; 
-    height: auto; 
+    align-items: flex-start;
+    justify-content: space-between;
+    width: auto;
+    height: auto;
 }
 
-.panel{
+.panel {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -105,14 +98,12 @@ body
     margin: 10px;
 }
 
-body.dark-mode
-{
+body.dark-mode {
     background-color: #1c1c1c;
     color: rgba(245, 245, 245, 0.861);
 }
 
-.dynamicscrolling
-{
+.dynamicscrolling {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -122,22 +113,19 @@ body.dark-mode
     overflow: auto;
 }
 
-.dynamicscrolling .thumbnail-item
-{
+.dynamicscrolling .thumbnail-item {
     position: relative;
     display: inline-block;
     margin-top: 15px;
 }
 
-.dynamicscrolling .thumbnail-item img
-{
+.dynamicscrolling .thumbnail-item img {
     display: block;
     width: 80%;
     height: auto;
 }
 
-.dynamicscrolling .thumbnail-item h5.thumbnail.title
-{
+.dynamicscrolling .thumbnail-item h5.thumbnail.title {
     margin: 0;
     padding-top: 20px;
     width: 80%;
@@ -147,32 +135,27 @@ body.dark-mode
 }
 
 .leftscrollbuttonstyle,
-.rightscrollbuttonstyle
-{
+.rightscrollbuttonstyle {
     position: absolute;
     top: 50%;
     z-index: 1;
     cursor: pointer;
 }
 
-.leftscrollbuttonstyle
-{
+.leftscrollbuttonstyle {
     left: 20px;
 }
 
-.rightscrollbuttonstyle
-{
+.rightscrollbuttonstyle {
     right: 20px;
 }
 
-#search-form
-{
+#search-form {
     margin-top: 10px;
     text-align: center;
 }
 
-form
-{
+form {
     background: #fff;
     width: 600px;
     height: 55px;
@@ -181,15 +164,13 @@ form
     align-items: center;
 }
 
-form input
-{
+form input {
     flex: 1;
     border: none;
     outline: none;
 }
 
-form button
-{
+form button {
     background: teal;
     padding: 21px 50px;
     border: none;
@@ -199,8 +180,7 @@ form button
     cursor: pointer;
 }
 
-.footer_section
-{
+.footer_section {
     background-color: #525266;
     color: #fff;
     padding: 20px 0;
@@ -214,8 +194,7 @@ form button
     justify-content: center;
 }
 
-.container
-{
+.container {
     display: flex;
     justify-content: center;
     /* Center the content horizontally */
@@ -226,46 +205,39 @@ form button
     /* Ensure full viewport height */
 }
 
-.footer_menu ul
-{
+.footer_menu ul {
     list-style: none;
     padding: 0;
     display: flex;
 }
 
-.footer_menu li
-{
+.footer_menu li {
     margin: 0 15px;
 }
 
-.footer_menu a
-{
+.footer_menu a {
     text-decoration: none;
     color: #fff;
     font-weight: bold;
 }
 
-.footer_menu a:hover
-{
+.footer_menu a:hover {
     text-decoration: underline;
 }
 
-.footer_info
-{
+.footer_info {
     text-align: center;
     /* Center the text horizontally */
     margin-top: 20px;
     /* Add margin for separation */
 }
 
-.footer_info p
-{
+.footer_info p {
     margin: 0;
     font-size: 14px;
 }
 
-.social_icon ul
-{
+.social_icon ul {
     list-style: none;
     padding: 0;
     display: flex;
@@ -274,16 +246,14 @@ form button
     /* Set the fixed space (10px) between photos */
 }
 
-.social_icon li
-{
+.social_icon li {
     flex: 1;
     /* Distribute available space equally among list items */
     max-width: 100px;
     /* Set a maximum width for the images */
 }
 
-.social_icon img
-{
+.social_icon img {
     width: 100%;
     /* Make all images take up 100% of their container's width */
     height: 100px;
@@ -292,14 +262,12 @@ form button
     /* Remove any default inline spacing around the images */
 }
 
-#header
-{
+#header {
     text-align: center;
     width: 80%;
 }
 
-#logo
-{
+#logo {
 
     margin-top: 20px;
     /* Adjust as needed */
@@ -312,8 +280,7 @@ form button
 
 }
 
-#logo img
-{
+#logo img {
     width: 80px;
     /* Adjust the size of the logo image */
     height: auto;
@@ -321,8 +288,7 @@ form button
     /* Adjust as needed */
 }
 
-#logo h1
-{
+#logo h1 {
     font-family: 'BubblegumSans';
     font-size: 80px;
     letter-spacing: 6px;
@@ -332,25 +298,22 @@ form button
 }
 
 /* Movie description formatting */
-.movie-details
-{
+.movie-details {
     margin-right: 15px;
     /* Adjust the margin as needed */
     font-family: 'Montserrat', sans-serif;
     /* Use the Montserrat font */
 }
 
-.img-thumbnail
-{
+/* Movie poster formatting */
+.img-thumbnail {
     float: left;
     width: 200px;
     height: 100%;
-    /* To maintain the aspect ratio of the image */
     margin-right: 20px;
-    /* Adjust the margin as needed */
 }
 
-.details
-{
+/* Movie description formatting */
+.details {
     font-family: 'Montserrat', sans-serif;
 }
