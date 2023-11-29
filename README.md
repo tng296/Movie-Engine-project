@@ -15,3 +15,5 @@ For inquiries regarding the use or distribution of this project, please contact 
 Thank you for your understanding and cooperation.
 
 **All rights reserved to Mark, Li, Luis, Sam, and Tung (myself).**
+
+**Original Repo: https://github.com/Luinceanera/WebDesignProject**
